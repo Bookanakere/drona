@@ -1,5 +1,6 @@
 package com.saucedemo.pages;
 
+import com.saucedemo.TestConfig;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Login {
     private final WebDriver driver;
-    private static final String LOGIN_URL = "https://www.saucedemo.com/";
+    private static TestConfig testConfig;
+    private static final String LOGIN_URL = TestConfig.config.getString("LOGIN_URL");
     
 
     @FindBy(name = "user-name")
