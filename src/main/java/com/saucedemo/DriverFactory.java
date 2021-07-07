@@ -1,4 +1,4 @@
-package com.saucedemo.pages;
+package com.saucedemo;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -10,16 +10,15 @@ import static io.github.bonigarcia.wdm.DriverManagerType.FIREFOX;
 
 public class DriverFactory {
     private static WebDriver driver;
-    private static String browser = "chrome";
+    private static TestConfig testConfig;
+    private static final String browser = TestConfig.config.getString("browser");
 
     public static WebDriver getDriver() {
         switch (browser) {
             case "chrome":
                 WebDriverManager.getInstance(CHROME).setup();
                 ChromeOptions options = new ChromeOptions();
-                options.addArguments("--no-sandbox");
-                options.addArguments("--disable-dev-shm-usage");
-                options.addArguments("--headless");
+                options.addArguments("--no-sandbox","--disable-dev-shm-usage","--headless");
                 driver = new ChromeDriver(options);
                 break;
 

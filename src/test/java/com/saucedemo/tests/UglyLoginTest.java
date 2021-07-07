@@ -1,6 +1,6 @@
 package com.saucedemo.tests;
 
-import com.saucedemo.pages.DriverFactory;
+import com.saucedemo.DriverFactory;
 import com.saucedemo.pages.Login;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
