@@ -1,7 +1,7 @@
 package com.saucedemo;
 import com.typesafe.config.*;
 
-import java.util.ResourceBundle;
+
 
 public class TestConfig {
 
